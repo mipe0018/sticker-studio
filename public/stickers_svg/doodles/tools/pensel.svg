@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 420" width="1500" height="420">
+<defs>
+  <filter id="stickerShadow" x="-15%" y="-30%" width="140%" height="170%">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="7" result="blur"/>
+    <feOffset in="blur" dx="4" dy="8" result="offset"/>
+    <feComponentTransfer in="offset" result="shadow">
+      <feFuncA type="linear" slope="0.3"/>
+    </feComponentTransfer>
+    <feMerge>
+      <feMergeNode in="shadow"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+
+  <linearGradient id="blue" x2="0" y2="1">
+    <stop offset="0" stop-color="#8799b5"/>
+    <stop offset=".5" stop-color="#9aaac2"/>
+    <stop offset="1" stop-color="#7185a2"/>
+  </linearGradient>
+</defs>
+
+<!-- Samlet sticker-silhuet med hvid kant -->
+<path
+  d="M79 191
+     Q108 165 137 145
+     Q180 120 225 133
+     Q250 137 274 145
+     L445 128
+     Q478 113 515 112
+     Q535 105 555 106
+     Q730 97 900 103
+     L1404 108
+     Q1432 108 1437 128
+     L1438 151
+     Q1435 169 1407 177
+     Q1200 202 1000 226
+     Q800 249 570 243
+     Q545 243 525 258
+     Q506 266 487 250
+     L462 238
+     L274 227
+     Q240 247 195 242
+     Q130 239 94 217
+     Q72 207 79 191Z"
+  fill="white"
+  stroke="white"
+  stroke-width="25"
+  stroke-linejoin="round"
+  filter="url(#stickerShadow)"/>
+
+<!-- Børstehoved -->
+<path
+  d="M83 190
+     Q108 165 137 146
+     Q180 123 225 133
+     Q251 137 271 147
+     Q280 166 275 191
+     Q280 214 266 227
+     Q233 243 193 239
+     Q132 237 98 215
+     Q77 205 83 190Z"
+  fill="#77717b"
+  stroke="#45404a"
+  stroke-width="3"/>
+
+<!-- Børstehårenes håndtegnede struktur -->
+<g fill="none" stroke-linecap="round">
+  <path d="M88 188 Q130 157 175 143 Q225 125 263 150" stroke="#b0aab3" stroke-width="3"/>
+  <path d="M91 195 Q144 174 191 157 Q231 145 269 160" stroke="#514b55" stroke-width="3"/>
+  <path d="M94 203 Q148 185 198 177 Q240 164 273 178" stroke="#aaa3ad" stroke-width="2"/>
+  <path d="M99 212 Q152 203 200 190 Q239 180 271 192" stroke="#48424d" stroke-width="3"/>
+  <path d="M111 219 Q161 235 211 218 Q244 208 267 201" stroke="#b5adb6" stroke-width="2"/>
+  <path d="M135 148 Q146 185 137 227" stroke="#514b55" stroke-width="2"/>
+  <path d="M170 137 Q180 181 174 235" stroke="#b9b1bb" stroke-width="2"/>
+  <path d="M215 135 Q208 180 222 232" stroke="#4b4650" stroke-width="2"/>
+  <path d="M245 145 Q235 187 260 218" stroke="#aaa2ad" stroke-width="2"/>
+</g>
+
+<!-- Lys metaldel -->
+<path
+  d="M271 147
+     Q355 139 423 127
+     L470 117
+     Q514 109 555 106
+     L558 225
+     Q541 235 524 254
+     Q506 263 487 250
+     L462 238
+     L274 227
+     Q280 207 275 187Z"
+  fill="#f5f1ec"
+  stroke="#554e4d"
+  stroke-width="3"/>
+
+<path d="M280 151 Q375 142 449 126"
+      fill="none" stroke="white" stroke-width="4"/>
+<path d="M452 121 Q458 180 458 237"
+      fill="none" stroke="#bcb5af" stroke-width="2"/>
+<path d="M483 116 Q490 180 482 247"
+      fill="none" stroke="#d2cbc5" stroke-width="2"/>
+<path d="M275 223 Q360 228 456 237"
+      fill="none" stroke="#aaa29c" stroke-width="2"/>
+
+<!-- Langt blåligt skaft -->
+<path
+  d="M555 106
+     Q730 98 900 103
+     L1404 108
+     Q1432 108 1437 128
+     L1438 151
+     Q1435 169 1407 177
+     Q1200 202 1000 226
+     Q800 249 570 243
+     Q558 240 555 225Z"
+  fill="url(#blue)"
+  stroke="#454c5b"
+  stroke-width="3.5"/>
+
+<!-- Diskret blyantstekstur -->
+<g fill="none" stroke-linecap="round">
+  <path d="M570 112 Q850 105 1120 113 L1410 116"
+        stroke="#c2cddd" stroke-width="3" opacity=".7"/>
+  <path d="M580 120 Q830 115 1070 124"
+        stroke="#d4dce8" stroke-width="2" opacity=".5"/>
+  <path d="M575 235 Q830 246 1070 218 L1410 174"
+        stroke="#536985" stroke-width="3" opacity=".6"/>
+  <path d="M700 128 Q950 122 1150 132"
+        stroke="#d1d9e5" stroke-width="2" opacity=".4"/>
+</g>
+
+</svg>

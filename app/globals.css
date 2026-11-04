@@ -1,26 +1,314 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
+/* ========================================
+   1. DESIGN TOKENS – KAWAII TOY STUDIO
+======================================== */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* MAIN COLORS */
+  --color-background: #fff5fa;
+  --color-surface: #ffffff;
+  --color-surface-pink: #ffe3ef;
+  --color-surface-blue: #e2f1ff;
+  --color-surface-purple: #eee5ff;
+  --color-surface-yellow: #fff2c9;
+  --color-surface-mint: #e0f5e9;
+
+  /* PINK */
+  --color-primary: #f5a6ca;
+  --color-primary-light: #ffd5e8;
+  --color-primary-dark: #df76aa;
+
+  /* BLUE */
+  --color-blue: #a9d4fa;
+  --color-blue-light: #d5eaff;
+  --color-blue-dark: #75b6e9;
+
+  /* EXTRA COLORS */
+  --color-lavender: #cdb9f5;
+  --color-yellow: #ffe08a;
+  --color-mint: #aee5c6;
+
+  /* TEXT */
+  --color-text: #59465f;
+  --color-text-light: #927f98;
+  --color-border: #f0dce9;
+
+  --color-white: #ffffff;
+
+  /* TYPOGRAPHY */
+  --font-heading: "Fredoka", "Arial Rounded MT Bold", sans-serif;
+  --font-body: "Nunito", "Arial", sans-serif;
+
+  /* FONT SIZES */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-3xl: 2.75rem;
+  --text-hero: clamp(2.5rem, 5vw, 4.5rem);
+
+  /* SPACING */
+  --section-spacing: 5rem;
+  --container-width: 1280px;
+
+  /* ROUNDED CORNERS */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-xl: 36px;
+  --radius-pill: 999px;
+
+  /* TOY-LIKE SHADOWS */
+  --shadow-soft: 0 6px 18px rgba(125, 83, 117, 0.08);
+  --shadow-card: 0 8px 20px rgba(125, 83, 117, 0.10);
+  --shadow-toy: 0 5px 0 rgba(191, 139, 176, 0.22);
+  --shadow-pink: 0 6px 0 rgba(223, 118, 170, 0.25);
+  --shadow-blue: 0 6px 0 rgba(117, 182, 233, 0.25);
+
+  /* TRANSITIONS */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ========================================
+   2. GLOBAL RESET
+======================================== */
+
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+/* ========================================
+   3. TYPOGRAPHY
+======================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+}
+
+h1 {
+  font-size: var(--text-hero);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: var(--text-3xl);
+}
+
+h3 {
+  font-size: var(--text-2xl);
+}
+
+p {
+  margin-top: 0;
+  color: var(--color-text-light);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ========================================
+   4. GLOBAL ELEMENTS
+======================================== */
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+/* Rounded form elements */
+input,
+textarea,
+select {
+  color: var(--color-text);
+}
+
+/* Selection */
+::selection {
+  background: var(--color-primary-light);
+  color: var(--color-text);
+}
+
+/* Focus */
+:focus-visible {
+  outline: 3px solid var(--color-blue);
+  outline-offset: 3px;
+}
+
+/* ========================================
+   5. REUSABLE CLASSES
+======================================== */
+
+.container {
+  width: min(100% - 3rem, var(--container-width));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--section-spacing);
+}
+
+.text-primary {
+  color: var(--color-primary-dark);
+}
+
+.text-secondary {
+  color: var(--color-text-light);
+}
+
+.bg-surface {
+  background-color: var(--color-surface);
+}
+
+.bg-pink {
+  background-color: var(--color-surface-pink);
+}
+
+.bg-blue {
+  background-color: var(--color-surface-blue);
+}
+
+.bg-purple {
+  background-color: var(--color-surface-purple);
+}
+
+.bg-yellow {
+  background-color: var(--color-surface-yellow);
+}
+
+.bg-mint {
+  background-color: var(--color-surface-mint);
+}
+
+.rounded-card {
+  border-radius: var(--radius-lg);
+}
+
+.soft-shadow {
+  box-shadow: var(--shadow-soft);
+}
+
+.toy-shadow {
+  box-shadow: var(--shadow-toy);
+}
+
+/* ========================================
+   6. PLAYFUL INTERACTIONS
+======================================== */
+
+.toy-hover {
+  transition:
+    transform var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+.toy-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card);
+}
+
+.toy-hover:active {
+  transform: translateY(1px);
+}
+
+/* ========================================
+   7. CUSTOM SCROLLBAR
+======================================== */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) var(--color-surface-pink);
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--color-surface-pink);
+  border-radius: var(--radius-pill);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border: 2px solid var(--color-surface-pink);
+  border-radius: var(--radius-pill);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
+}
+
+/* ========================================
+   8. RESPONSIVE
+======================================== */
+
+@media (max-width: 768px) {
+  :root {
+    --section-spacing: 3rem;
+    --text-3xl: 2rem;
+  }
+
+  .container {
+    width: min(100% - 2rem, var(--container-width));
+  }
+}
+
+/* ========================================
+   9. ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

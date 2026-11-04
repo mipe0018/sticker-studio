@@ -1,0 +1,70 @@
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 200 200"
+  width="200"
+  height="200"
+>
+  <defs>
+    <filter
+      id="sticker-shadow"
+      x="-30%"
+      y="-30%"
+      width="160%"
+      height="160%"
+    >
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
+      <feOffset in="blur" dx="3" dy="5" result="offset"/>
+      <feComponentTransfer in="offset" result="shadow">
+        <feFuncA type="linear" slope="0.28"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <g id="flower-shape">
+      <g fill="#F2A7B8">
+        <ellipse cx="100" cy="48" rx="23" ry="35"/>
+        <ellipse cx="100" cy="152" rx="23" ry="35"/>
+        <ellipse cx="48" cy="100" rx="35" ry="23"/>
+        <ellipse cx="152" cy="100" rx="35" ry="23"/>
+
+        <ellipse cx="63" cy="63" rx="23" ry="35" transform="rotate(-45 63 63)"/>
+        <ellipse cx="137" cy="63" rx="23" ry="35" transform="rotate(45 137 63)"/>
+        <ellipse cx="63" cy="137" rx="23" ry="35" transform="rotate(45 63 137)"/>
+        <ellipse cx="137" cy="137" rx="23" ry="35" transform="rotate(-45 137 137)"/>
+      </g>
+
+      <circle cx="100" cy="100" r="29" fill="#F5CF72"/>
+    </g>
+  </defs>
+
+  <!-- Sticker med skygge -->
+  <g filter="url(#sticker-shadow)">
+
+    <!-- Hvid kontur -->
+    <use
+      href="#flower-shape"
+      fill="white"
+      stroke="white"
+      stroke-width="13"
+      stroke-linejoin="round"
+      stroke-linecap="round"
+      paint-order="stroke fill"
+    />
+
+    <!-- Original blomst -->
+    <g stroke="#564B3D" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+      <use href="#flower-shape"/>
+
+      <!-- Små detaljer -->
+      <g fill="none" stroke="#564B3D" stroke-width="3">
+        <path d="M91 91 Q96 85 101 91"/>
+        <path d="M108 91 Q113 85 118 91"/>
+        <path d="M91 108 Q100 117 109 108"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sticker Studio
 
-## Getting Started
+Sticker Studio is a Next.js sticker library and creative workspace. It supports browsing categorized SVG/PNG stickers, uploading local artwork, arranging stickers on an A4-proportioned sheet, and saving workspace preferences in the browser.
 
-First, run the development server:
+## Requirements
+
+- Node.js compatible with Next.js 16.4.5 (the audit used Node.js 24.13.1)
+- npm (the audit used npm 11.8.0)
+
+No environment variables or external API credentials are required by the current implementation.
+
+## Install and run
+
+Run commands from this `sticker-studio` directory:
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available checks
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npx tsc --noEmit
+npm run build
+npm run start
+```
 
-## Learn More
+There is no automated test script in `package.json`. The production build, TypeScript check, API checks, and browser interaction checks performed during the November 2026 audit are documented in [PROJECT_REPORT.md](./PROJECT_REPORT.md).
 
-To learn more about Next.js, take a look at the following resources:
+## Important implementation notes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Sticker files are stored under `public/stickers_svg` on the server's local filesystem.
+- Workspace state, favorites, hidden sticker IDs, floating stickers, and paper color are persisted in browser `localStorage` through Zustand.
+- Newly uploaded public assets require a production server restart before `next start` serves their new URLs. See **Known limitations** in `PROJECT_REPORT.md` before deploying upload functionality.
+- The existing application is primarily JavaScript/JSX; TypeScript is used for tooling and `next.config.ts`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See [PROJECT_REPORT.md](./PROJECT_REPORT.md) for the complete architecture, functionality, API, state-management, audit, and verification documentation.

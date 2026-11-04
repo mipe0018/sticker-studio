@@ -1,0 +1,129 @@
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 200 200"
+  width="200"
+  height="200"
+>
+  <defs>
+    <filter
+      id="sticker-shadow"
+      x="-30%"
+      y="-30%"
+      width="160%"
+      height="160%"
+    >
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
+      <feOffset in="blur" dx="3" dy="5" result="offset"/>
+      <feComponentTransfer in="offset" result="shadow">
+        <feFuncA type="linear" slope="0.28"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Hele blomstens silhuet -->
+    <g id="flower-silhouette">
+      <g transform="translate(100 92)">
+        <g fill="#F4A7BD">
+          <ellipse cx="0" cy="-43" rx="22" ry="34"/>
+          <ellipse cx="0" cy="-43" rx="22" ry="34" transform="rotate(60)"/>
+          <ellipse cx="0" cy="-43" rx="22" ry="34" transform="rotate(120)"/>
+          <ellipse cx="0" cy="-43" rx="22" ry="34" transform="rotate(180)"/>
+          <ellipse cx="0" cy="-43" rx="22" ry="34" transform="rotate(240)"/>
+          <ellipse cx="0" cy="-43" rx="22" ry="34" transform="rotate(300)"/>
+        </g>
+
+        <circle r="25" fill="#F6D77A"/>
+      </g>
+
+      <!-- Stilk -->
+      <path
+        d="M100 120 C100 145 96 160 82 177"
+        fill="none"
+        stroke="#78966D"
+        stroke-width="7"
+        stroke-linecap="round"
+      />
+
+      <!-- Blade -->
+      <path
+        d="M94 151 C69 135 54 143 58 158 C72 168 86 163 94 151Z"
+        fill="#A9C99A"
+      />
+
+      <path
+        d="M96 163 C119 145 137 151 132 167 C120 179 105 175 96 163Z"
+        fill="#A9C99A"
+      />
+    </g>
+  </defs>
+
+  <!-- Sticker med skygge -->
+  <g filter="url(#sticker-shadow)">
+
+    <!-- Hvid kontur -->
+    <use
+      href="#flower-silhouette"
+      fill="none"
+      stroke="white"
+      stroke-width="12"
+      stroke-linejoin="round"
+      stroke-linecap="round"
+      paint-order="stroke"
+    />
+
+    <!-- Original blomst -->
+    <g>
+      <g transform="translate(100 92)">
+        <g fill="#F4A7BD" stroke="#55443D" stroke-width="4" stroke-linejoin="round">
+          <ellipse cx="0" cy="-43" rx="22" ry="34"/>
+          <ellipse cx="0" cy="-43" rx="22" ry="34" transform="rotate(60)"/>
+          <ellipse cx="0" cy="-43" rx="22" ry="34" transform="rotate(120)"/>
+          <ellipse cx="0" cy="-43" rx="22" ry="34" transform="rotate(180)"/>
+          <ellipse cx="0" cy="-43" rx="22" ry="34" transform="rotate(240)"/>
+          <ellipse cx="0" cy="-43" rx="22" ry="34" transform="rotate(300)"/>
+        </g>
+
+        <circle r="25" fill="#F6D77A" stroke="#55443D" stroke-width="4"/>
+
+        <!-- Ansigt -->
+        <circle cx="-8" cy="-5" r="2.8" fill="#55443D"/>
+        <circle cx="8" cy="-5" r="2.8" fill="#55443D"/>
+        <path
+          d="M-8 7 Q0 15 8 7"
+          fill="none"
+          stroke="#55443D"
+          stroke-width="3"
+          stroke-linecap="round"
+        />
+      </g>
+
+      <!-- Stilk -->
+      <path
+        d="M100 120 C100 145 96 160 82 177"
+        fill="none"
+        stroke="#78966D"
+        stroke-width="7"
+        stroke-linecap="round"
+      />
+
+      <!-- Blade -->
+      <path
+        d="M94 151 C69 135 54 143 58 158 C72 168 86 163 94 151Z"
+        fill="#A9C99A"
+        stroke="#55443D"
+        stroke-width="3"
+      />
+
+      <path
+        d="M96 163 C119 145 137 151 132 167 C120 179 105 175 96 163Z"
+        fill="#A9C99A"
+        stroke="#55443D"
+        stroke-width="3"
+      />
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,29 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
+    <feOffset in="blur" dx="3" dy="5" result="offset"/>
+    <feComponentTransfer in="offset" result="shadow">
+      <feFuncA type="linear" slope=".3"/>
+    </feComponentTransfer>
+    <feMerge>
+      <feMergeNode in="shadow"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+</defs>
+<g filter="url(#shadow)">
+  <path d="M48 165 V88 Q48 34 100 34 Q152 34 152 88 V165 L126 149 L101 167 L76 149Z"
+    fill="#FFF9F0" stroke="white" stroke-width="15" stroke-linejoin="round"/>
+  <path d="M48 165 V88 Q48 34 100 34 Q152 34 152 88 V165 L126 149 L101 167 L76 149Z"
+    fill="#FFF9F0" stroke="#564B3D" stroke-width="5" stroke-linejoin="round"/>
+  <g fill="#564B3D">
+    <ellipse cx="82" cy="94" rx="5" ry="8"/>
+    <ellipse cx="118" cy="94" rx="5" ry="8"/>
+  </g>
+  <circle cx="68" cy="108" r="7" fill="#F4A7BD"/>
+  <circle cx="132" cy="108" r="7" fill="#F4A7BD"/>
+  <path d="M91 116 Q100 126 109 116" fill="none" stroke="#564B3D" stroke-width="4" stroke-linecap="round"/>
+</g>
+</svg>

@@ -1,0 +1,31 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
+    <feOffset in="blur" dx="3" dy="5" result="offset"/>
+    <feComponentTransfer in="offset" result="shadow">
+      <feFuncA type="linear" slope=".3"/>
+    </feComponentTransfer>
+    <feMerge>
+      <feMergeNode in="shadow"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+</defs>
+<g filter="url(#shadow)">
+  <path d="M100 68 Q44 39 42 91 Q44 143 100 177 Q156 143 158 91 Q156 39 100 68Z"
+    fill="#E96F79" stroke="white" stroke-width="15" stroke-linejoin="round"/>
+  <path d="M100 68 Q44 39 42 91 Q44 143 100 177 Q156 143 158 91 Q156 39 100 68Z"
+    fill="#E96F79" stroke="#564B3D" stroke-width="5"/>
+  <path d="M100 68 Q72 27 55 46 Q77 41 100 68 Q121 31 145 46 Q123 42 100 68Z"
+    fill="#A9C99A" stroke="#564B3D" stroke-width="4" stroke-linejoin="round"/>
+  <g fill="#F6D77A">
+    <ellipse cx="72" cy="91" rx="3" ry="6"/>
+    <ellipse cx="105" cy="91" rx="3" ry="6"/>
+    <ellipse cx="134" cy="94" rx="3" ry="6"/>
+    <ellipse cx="87" cy="125" rx="3" ry="6"/>
+    <ellipse cx="117" cy="137" rx="3" ry="6"/>
+  </g>
+</g>
+</svg>

@@ -1,0 +1,33 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+<feGaussianBlur in="SourceAlpha" stdDeviation="3" result="b"/>
+<feOffset in="b" dx="3" dy="5" result="o"/>
+<feComponentTransfer in="o" result="s"><feFuncA type="linear" slope=".3"/></feComponentTransfer>
+<feMerge><feMergeNode in="s"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<g id="flower">
+<g fill="#F4A7BD">
+<ellipse cx="100" cy="48" rx="19" ry="32"/>
+<ellipse cx="100" cy="48" rx="19" ry="32" transform="rotate(45 100 100)"/>
+<ellipse cx="100" cy="48" rx="19" ry="32" transform="rotate(90 100 100)"/>
+<ellipse cx="100" cy="48" rx="19" ry="32" transform="rotate(135 100 100)"/>
+<ellipse cx="100" cy="48" rx="19" ry="32" transform="rotate(180 100 100)"/>
+<ellipse cx="100" cy="48" rx="19" ry="32" transform="rotate(225 100 100)"/>
+<ellipse cx="100" cy="48" rx="19" ry="32" transform="rotate(270 100 100)"/>
+<ellipse cx="100" cy="48" rx="19" ry="32" transform="rotate(315 100 100)"/>
+</g>
+<circle cx="100" cy="100" r="27" fill="#F6D77A"/>
+</g>
+</defs>
+<g filter="url(#shadow)">
+<use href="#flower" fill="none" stroke="white" stroke-width="14" stroke-linejoin="round"/>
+<use href="#flower"/>
+<g fill="#564B3D">
+<circle cx="91" cy="96" r="3"/>
+<circle cx="109" cy="96" r="3"/>
+</g>
+<path d="M91 110 Q100 120 109 110" fill="none" stroke="#564B3D" stroke-width="3" stroke-linecap="round"/>
+</g>
+</svg>
