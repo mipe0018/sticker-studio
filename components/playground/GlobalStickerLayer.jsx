@@ -242,10 +242,10 @@ export default function GlobalStickerLayer({ children }) {
             >
               <div
                 className={`relative h-full w-full cursor-move rounded-lg ${
-                  isSelected
-                    ? "outline outline-2 outline-dashed outline-[var(--color-primary)]"
-                    : ""
-                }`}
+  isSelected
+    ? "outline-2 outline-dashed outline-[var(--color-primary)]"
+    : ""
+}`}
               >
                 <Image
                   src={sticker.src}
